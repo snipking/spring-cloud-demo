@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    config:
+      name: spring-cloud-gateway
+      discovery:
+        serviceId: spring-cloud-config
+        enabled: true
+      failFast: true
+      retry:
+        maxAttempts: 32
+        multiplier: 1.5
+        maxInterval: 10000
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: spring-cloud-gateway
+  client:
+    serviceUrl:
+      defaultZone: ${REGISTER_SERVER_URL:http://localhost:8761/eureka/}
+server:
+  port: ${PORT:8010}
