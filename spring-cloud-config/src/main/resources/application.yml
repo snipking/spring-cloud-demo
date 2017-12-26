@@ -16,5 +16,7 @@ spring:
           uri: ${CONFIG_URL:https://github.com/snipking/spring-cloud-config-repo.git}
           searchPaths: '{profile}'
         bootstrap: true
+  profiles:
+    active: default
 server:
   port: ${PORT:8888}
